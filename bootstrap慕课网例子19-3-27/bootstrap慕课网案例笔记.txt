@@ -1,0 +1,120 @@
+一、使用前：安装
+
+1.引用：必须要在bootstrap之前先引用jq。因为bootstrap是依赖jq的
+
+引入jq
+<script src=""></script>
+
+引入bootstrap
+<script src=""></script>
+
+2.网页格式
+
+<!DOCTYPE html>
+<meta charset="utf-8"> 
+
+IE运行最新渲染模式：
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+device-width 移动端屏幕适应设置；initial-scale 比例固定：1
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+3.安装：在下载好的bootstrap里面，js 文件夹中，另外下载4个文件
+
+1)html5shivjs 解决IE 对Html5 标签的支持
+下载bootstrap文件后，在js 文件夹中，下载了一个html5shiv.js
+
+2）respind.min.js 解决IE8 对CSS3 媒体查询的支持
+
+3）jq.min.js
+4)jq.min.map
+
+-----------------------------------------------------------
+
+二、使用bootstrap：
+(一)导航条
+
+1.开始使用(复制bootstrap官网的初始代码)
+1)页面语言改为中文
+<html lang="zh-CN">标签
+
+2.格式说明：以顶部导航条为例（navigation）
+
+<nar>导航组件/ class 规定使用导航样式 / role 规定功能为导航 条
+<nav class="navbar navbar-default" role="navigation">
+
+<div> 包裹，class 规定 屏幕适应or固定居中
+<div class="container-fluid">
+
+3.响应式布局：使用 collapse 组件屏幕调整后，折叠组件
+第一 部分：不会折叠
+<div class="navbar-header">
+   <ul>
+       <li>
+       <li>
+   </ul>
+</div>
+
+
+第二部分：屏幕缩小时，会折叠成一个可下拉按钮
+<div class="collapse navbar-collapse">
+   <ul>
+       <li>
+       <li>
+   </ul>
+</div>
+
+3.固定元素
+添加 .navbar-fixed-top 类可以让导航条固定在顶部
+**给body元素添加padding-top:70px, 防止内容被导航条遮住
+
+可以包含一个 .container 或 .container-fluid 容器，从而让导航条居中或者自适应显示
+
+4.添加样式
+（一）导航条：使用组件 <nav>
+在class中添加 .navbar-inverse 样式，可以是导航条变为黑色底色
+
+（二）滚动图片：
+(1)使用Carousel插件
+（2）水平分割线<hr> horizon rules
+
+（三）栅格系统
+（1）“行（row）”必须包含在 .container （固定宽度）或 .container-fluid （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。
+（2）使用 .col-md-offset-* 类可以将列向右侧偏移。
+     如，.col-md-offset-4 类将 .col-md-4 元素向右侧偏移了4个列（column）的宽度
+例子：<div class="col-md-4 col-md-offset-4"></div>
+    例子解析：1. 这里class里面，col-md-4 表示4个单元的位置（一列分为12个单元，这里4个单元就是屏幕宽度的1/3）；
+              2.col-md-offset-4 表示这个元素向右偏移了4个列单元的位置
+
+(四)标签页：
+（1）使用<ul class="nav nav-tabs" role="tablist"></ul>插件
+(2)共两部分：通过第一部分中<li> <a></a></li> 的href 值和第二部分的id 关联起来。
+   第一部分：标签页头部
+<ul class="nav nav-tabs" role="tablist"></ul>
+
+   第二部分：放置和标签页对应的内容
+<div class="tab-content"></div>
+
+
+（五）页脚
+（1）元素浮动：添加class="pull-right"向右浮动
+（2）模态框：弹出对话框：<div class="modal fade"></div> 
+   共三部分：
+      1）标题 <div class="modal-header">
+      2）内容 <div class="modal-body">
+      3）尾部（按键）<div class="modal-footer">
+
+（六）导航栏 --跳转至--》标签页
+  目标：点击导航栏navbar 下拉菜单<a>，跳转至对应的tab中的<a>
+  实现：利用 标签页 方法 .tab("show")，使标签页（li元素）跳转。
+      1.设置导航栏<a> 与 标签页<a>元素 拥有同样的href 值，如： href="#zujian"
+      2.点击事件触发后，获取当下导航元素的href值，并使同样href 值的 标签页元素使用 .tab('show')方法跳转。
+
+    $(document).ready(function(){
+            $("#thelist li a").click(function(){
+                var href=$(this).attr("href")
+                $("#showlist a[href='"+href+"']").tab('show')
+            })
+        }
+    )

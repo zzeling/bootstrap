@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body{
+            padding-top:0;
+            padding-bottom: 40px;
+            padding-left: 0;
+            padding-right: 0;
+            margin:0 auto;
+        }
+
+/*导航条*/
+        .navbar{
+            margin-bottom: 0;
+        }
+
+/*轮播图*/
+        .item{
+            background-color: black;
+        }
+        .carousel-inner .item img{
+            height:350px;
+            display: block;
+            margin: auto;
+        }
+        .carousel-wrap{
+            margin-top: -200px;
+            padding-top: -150px;
+            width: 100%;
+            background-color: black;
+            opacity: 0.7;
+            height: 200px;
+        }
+        .carousel-caption{
+         padding-top:10px;
+            padding-bottom: 40px;
+        }
+        .row .col-md-4{
+            text-align: center;
+
+        }
+
+        .col-md-4 img{
+            height: 170px;
+        }
+
+/* tab标签页*/
+        .nav-tabs{
+            margin-top: 50px;
+            padding: 0px 50px;
+        }
+        .tab-content{
+            margin-bottom: 30px;
+        }
+        .tab-div img{
+            width:250px;}
+        .row{
+            padding-left:80px;
+        }
+/*页脚*/
+        footer{
+            padding: 0 20px
+        }
+        footer div{
+            float:left;
+
+        }
+
+    </style>
+</head>
+<body>
+<!--导航条组件-->
+<nav class="navbar navbar-default" id="top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#demo-list" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">某系统管理</a>
+        </div>
+
+        <!-- 屏幕缩小后，这部分链接缩小为下拉菜单 -->
+        <div class="collapse navbar-collapse" id="demo-list">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">功能<span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="thelist">
+                        <!--标头-->
+                        <li class="dropdown-header">选项</li>
+                        <li><a href="#zujian">组件</a></li>
+                        <li><a href="#chajian">插件</a></li>
+                        <li><a href="#kongjian">控件</a></li>
+                        <!--下拉菜单分割线-->
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">English</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+
+                <button type="submit" class="btn btn-default">提交</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!--轮播图 插件-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=c1d1b6250524ab18f41be96554938da8/8b82b9014a90f603e03acf443512b31bb051ed2f.jpg
+" alt="...">
+            <div class="carousel-wrap">
+            <div class="carousel-caption">
+                <h1>前端</h1>
+                <p>前端即网站前台部分，运行在PC端，移动端等浏览器上展现给用户浏览的网页。随着互联网技术的发展，HTML5，CSS3，前端框架的应用，跨平台响应式网页设计能够适应各种屏幕分辨率，完美的动效设计，给用户带来极高的用户体验。</p>
+                </div>
+                </div>
+        </div>
+        <div class="item">
+            <img src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=f86a9f5b4a10b912abccfeaca2949766/63d0f703918fa0ec3d81bced2b9759ee3c6ddb88.jpg
+" alt="...">
+            <div class="carousel-wrap">
+            <div class="carousel-caption">
+                <h1>HTML</h1>
+                <p>超文本标记语言，标准通用标记语言下的一个应用。是 网页制作必备的编程语言</p>
+            </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268/sign=1ae8cdc389d4b31cf03c93bdbfd7276f/279759ee3d6d55fbe2fea0a66f224f4a20a4dd72.jpg
+" alt="...">
+            <div class="carousel-wrap">
+            <div class="carousel-caption">
+                <h1>CSS</h1>
+                <p>层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。
+                </p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=ed20149d0b7b020818c437b303b099b6/91ef76c6a7efce1b1e30f4f2ae51f3deb48f65ea.jpg" alt="...">
+            <div class="carousel-wrap">
+            <div class="carousel-caption">
+                <h1>JavaScript</h1>
+                <p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3039064869,2650602580&fm=26&gp=0.jpg"><br><h2>Vue</h2><a class="btn btn-default" href="#" role="button">点击下载vue</a></div>
+        <div class="col-md-4 col-md-offset-4"><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2684613759,2628279694&fm=26&gp=0.jpg"><br><h2>React</h2><a class="btn btn-default" href="#" role="button">点击下载react</a></div>
+         </div>
+</div>
+
+<hr>
+
+<!--标签页插件-->
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist" id="showlist">
+        <li role="presentation" ><a href="#zujian" aria-controls="home" role="tab" data-toggle="tab">组件</a></li>
+        <li role="presentation"><a href="#chajian" aria-controls="profile" role="tab" data-toggle="tab">插件</a></li>
+        <li role="presentation"><a href="#kongjian" aria-controls="messages" role="tab" data-toggle="tab">控件</a></li>
+        <li role="presentation" class="active"><a href="#4" aria-controls="settings" role="tab" data-toggle="tab">4</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="zujian">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 tab-div">
+                        <img src="http://ww2.sinaimg.cn/mw690/6941baebgw1etzt3gnir1j20t40gognd.jpg">
+                    </div>
+                    <div class="col-md-6 tab-text"><h2>组件</h2><br><p>组件（Component）是对数据和方法的简单封装。组件可以有自己的属性和方法。属性是组件数据的简单访问者。方法则是组件的一些简单而可见的功能。使用组件可以实现拖放式编程、快速的属性处理以及真正的面向对象的设计。</p>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="chajian"><div class="container">
+            <div class="row">
+                <div class="col-md-6 tab-text"><h2>插件</h2><br><p>插件(Plug-in,又称addin、add-in、addon或add-on,又译外挂)是一种遵循一定规范的应用程序接口编写出来的程序。</p>
+                </div>
+                <div class="col-md-4 tab-div">
+                    <img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=7d1b04eba40f4bfb98dd960662261395/d439b6003af33a8716496b6ec65c10385343b59a.jpg">
+                </div>
+            </div>
+        </div></div>
+        <div role="tabpanel" class="tab-pane" id="kongjian"><div class="container">
+            <div class="row">
+                <div class="col-md-4 tab-div">
+                    <img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=557ca75a7cc6a7efad2ba0749c93c434/5bafa40f4bfbfbed190934fa72f0f736aec31fe6.jpg">
+                </div>
+                <div class="col-md-6 tab-text"><h2>控件</h2><br><p>控件是指对数据和方法的封装。控件可以有自己的属性和方法，其中属性是控件数据的简单访问者，方法则是控件的一些简单而可见的功能、控件创建过程包括设计、开发、调试（就是所谓的3Ds开发流程,即Design、Develop、Debug）工作， 然后是控件的使用。</p>
+                </div>
+            </div>
+        </div></div>
+        <div role="tabpanel" class="tab-pane" id="settings"><div class="container">
+            <div class="row">
+                <div class="col-md-6"><h2>4</h2><br><p>组件就是组成整个框架的单元体。</p>
+                </div>
+                <div class="col-md-4 tab-div">
+                    <img src="http://ww2.sinaimg.cn/mw690/6941baebgw1etzt3gnir1j20t40gognd.jpg">
+                </div>
+            </div>
+        </div></div>
+
+    </div>
+
+</div>
+
+<!--页脚-->
+<!--页脚模态框：第一部分：按钮-->
+<footer>
+    <div data-toggle="modal" data-target="#myModal"><u>了解更多</u></div>
+    <div class="pull-right"><a href="#top"><u>回到顶部 </u></a></div>
+</footer>
+
+<!-- Button trigger modal -->
+<!--页脚模态框：第二部分：窗口-->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">详情</h4>
+            </div>
+            <div class="modal-body">
+                本网页仿造慕课网课程：boostrap教程
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ><a href="https://www.imooc.com/video/3347/0" target="_blank">前往慕课网课程地址</a></button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">好的</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+            $("#thelist li a").click(function(){
+                var href=$(this).attr("href")
+                $("#showlist a[href='"+href+"']").tab('show')
+            })
+        }
+    )
+
+</script>
+</body>
+</html>
